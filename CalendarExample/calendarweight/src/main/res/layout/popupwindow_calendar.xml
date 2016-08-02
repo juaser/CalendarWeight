@@ -11,7 +11,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="90dp"
-        android:background="#ffeeeeee"
+        android:background="@color/color_bg_calendar"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:textColor="#aa564b4b"
+                android:textColor="@color/color_title"
                 android:textSize="18sp" />
 
             <RelativeLayout
@@ -70,7 +70,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#bbcc3333" />
+            android:background="@color/color_line" />
 
         <Button
             android:id="@+id/popupwindow_calendar_bt_enter"
@@ -78,7 +78,7 @@
             android:layout_height="45dp"
             android:background="@drawable/bt_nobgd"
             android:text="完成"
-            android:textColor="#aa564b4b"
+            android:textColor="@color/color_complete"
             android:textSize="16sp" />
     </LinearLayout>
 

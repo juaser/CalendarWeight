@@ -18,7 +18,12 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new KCalendarPop(MainActivity.this, btn);
+                new KCalendarPop(MainActivity.this, btn, new KCalendarPop.onCompleteListener() {
+                    @Override
+                    public void complete(String date) {
+
+                    }
+                });
             }
         });
     }

@@ -2,6 +2,7 @@ package com.plugin.calendarweight;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ public class KCalendarPop extends PopupWindow {
     public static KCalendarPop pop;
     String date = null;// 设置默认选中的日期  格式为 “2014-04-05” 标准DATE格式
 
-    public KCalendarPop(Context mContext, View parent) {
+    public KCalendarPop(Context mContext, View parent, final onCompleteListener mCompleteListener) {
         View view = View.inflate(mContext, R.layout.popupwindow_calendar, null);
         view.startAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_in));
         LinearLayout ll_popup = (LinearLayout) view.findViewById(R.id.ll_popup);
@@ -113,8 +114,16 @@ public class KCalendarPop extends PopupWindow {
                 .setOnClickListener(new View.OnClickListener() {
 
                     public void onClick(View v) {
+                        Log.e("选中日期", "date==" + date);
+                        if (mCompleteListener != null) {
+                            mCompleteListener.complete(date);
+                        }
                         dismiss();
                     }
                 });
+    }
+
+    public interface onCompleteListener {
+        void complete(String date);
     }
 }
